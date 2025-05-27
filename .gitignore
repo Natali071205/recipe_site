@@ -1,0 +1,6 @@
+# client
+client/my-app/node_modules/
+
+# server
+server/node_modules/
+
