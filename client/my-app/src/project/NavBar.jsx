@@ -120,7 +120,7 @@ const NavBar = () => {
             </Box>
           )}
           <Search />
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } ,position: 'relative',left: '52%'}}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -132,6 +132,7 @@ const NavBar = () => {
               <MenuIcon />
             </IconButton>
             <Menu
+            sx={{position: 'relative',left: '262%'}}
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -147,7 +148,7 @@ const NavBar = () => {
               onClose={handleCloseNavMenu}
             >
               {pages.map((page, index) => (
-                <MenuItem key={index} onClick={() => handleNavigate(page)}>
+                <MenuItem  key={index} onClick={() => handleNavigate(page)}>
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}

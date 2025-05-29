@@ -17,8 +17,7 @@ const CategoryRecipe = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = useContext(UserContext);
-  console.log(user);
-  console.log('user.isAdmin:', user?.isAdmin);
+ 
 
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
   const [recipeToDelete, setRecipeToDelete] = useState(null);
@@ -184,15 +183,15 @@ const CategoryRecipe = () => {
                 {/* כפתורי מנהל */}
                 {user && user.isAdmin && (
                   <Box sx={{ position: 'absolute', bottom: 10, right: 10, display: 'flex', gap: 1 }}>
-                    <Link to={`/update-recipe/${recipe._id}`}>
+                    {/* <Link to={`/update-recipe/${recipe._id}`}>
                       <IconButton sx={{ color: 'black' }}>
                         <EditIcon />
                       </IconButton>
-                    </Link>
+                    </Link> */}
 
                     {/* כפתור מחיקה */}
                     <IconButton
-                      sx={{ color: 'black' }}
+                      sx={{ color: 'black' , position:'relative',bottom: '11px',right: '309px'}}
                       onClick={(e) => {
                         e.stopPropagation();
                         handleDeleteRecipe(recipe._id);

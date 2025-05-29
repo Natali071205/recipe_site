@@ -24,6 +24,8 @@ const RecipeData = () => {
   const [showInput, setShowInput] = useState(false);
   const [relatedRecipes, setRelatedRecipes] = useState([]);
   const { user } = useContext(UserContext);
+  console.log(user,'in recipe');
+  
  const navigate = useNavigate();
   const [editingId, setEditingId] = useState(null);
   const [editedContent, setEditedContent] = useState('');
@@ -318,7 +320,7 @@ const RecipeData = () => {
                     <IconButton onClick={handlePrint}>
                       <PrintIcon sx={{ color: 'black' }} />
                     </IconButton>
-                    {user?._id === recipe.userCode?._id && (
+                    {user?.isAdmin && (
                       <Box
                         onClick={() => navigate(`/updateRecipe/${recipe._id}`)}
                         sx={{
